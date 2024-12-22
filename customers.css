@@ -1,0 +1,279 @@
+:root {
+    /* MAIN COLORS */
+    --logoOrange: #ECA125;
+    --logoOrangeLighter: #eca0254c;
+    --logoOrangeHover: #eca02589;
+    --logoRed: #C74B19;
+    --logoGrey: #CCCCCE;
+    --white: #ffffff;
+    --black: #000000;
+    /* FONT-SIZES */
+    --mainHeading: 3.5em;
+    --secondaryHeading: 2.0em;
+    --paragraphSize: 1.5em;
+    --captionSize: 1em;
+    --phoneParagraph: 0.8em;
+    /* SECTION PADDING */
+    --normalPadding: 25px;
+    /* ANIMATING BUTTONS */
+    --buttonTransitionTime: .3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: white;
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #222;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo h2 {
+    color: var(--logoOrange);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-bottom: 20px;
+  }
+  
+  .nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  .nav-links a:hover {
+
+    background-color: var(--logoOrangeHover);
+    color: white;
+  }
+  
+  .main-content {
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .search input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background-color: #333;
+    color: white;
+    width: 300px;
+  }
+  
+  .user-profile {
+    color: #bbb;
+  }
+
+  .table-container {
+    background: #222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table thead {
+    background: var(--logoOrange);
+    color: #000;
+  }
+  
+  table th, table td {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  table tbody tr:nth-child(odd) {
+    background: #333;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background: #444;
+  }
+  
+  table tbody tr:hover {
+    background: var(--logoOrangeLighter);
+    color: #000;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .actions button.edit {
+    background: #4caf50;
+    color: white;
+  }
+  
+  .actions button.delete {
+    background: #f44336;
+    color: white;
+  }
+  
+  .actions button:hover {
+    opacity: 0.9;
+  }
+  
+
+
+  /* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  tr, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  #customersTable tbody :hover{
+    color: white;
+  }
+
+  th {
+    background-color: var(--logoOrange);
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #222;
+  }
+  
+  tr:hover {
+    background-color: #333;
+    cursor: pointer;
+  }
+  
+  button {
+    background-color: var(--logoOrange);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--logoOrangeHover);
+  }
+  
+  /* Hide Popup Form by Default */
+.popup-form {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Bring it to the front */
+  }
+  
+  /* Show Popup Form when Visible */
+  .popup-form.show {
+    display: flex; /* Make it visible */
+  }
+  
+  /* Form Container Styling */
+  .popup-form .form-container {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    position: relative; /* For positioning within the popup */
+  }
+  
+  .popup-form h2 {
+    color: var(--logoOrange);
+    margin-bottom: 20px;
+  }
+  
+  .popup-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+  }
+  
+  .popup-form input:focus {
+    outline: none;
+    border-color: var(--logoOrange);
+  }
+  
+  /* Cancel and Add Buttons */
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Add Close Button on Popup */
+  button {
+    background-color: var(--logoOrange);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--logoOrangeLighter);
+  }
+  

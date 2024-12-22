@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CODESCRIPT Customers</title>
+  <link rel="stylesheet" href="customers.css">
+  <!-- FIREBASE CONNECTION -->
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <h2>CODESCRIPT</h2>
+    </div>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="customers.html">Customers</a></li>
+      <!-- <li><a href="#">Analytics</a></li> -->
+      <li><a href="finance.html">Financing</a></li>
+      <li><a href="settings.html">Settings</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Top Navbar -->
+    <div class="navbar">
+      <div class="search">
+        <input type="text" placeholder="Search...">
+      </div>
+      <div class="user-profile">
+        <span>Welcome, CODESCRIPT</span>
+      </div>
+    </div>
+
+    <!-- Customers Section -->
+    <div class="customers-section">
+        <div class="header">
+          <button onclick="openForm()">+ Add Customer</button>
+        </div>
+
+          <!-- Customers Table -->
+      <table id="customersTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date Created</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dynamic Rows Will Be Added Here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+    <!-- Add Customer Form Popup -->
+    <div class="popup-form" id="customerFormPopup" onclick="closeFormOutside(event)">
+    <div class="form-container">
+        <h2>Add New Customer</h2>
+        <form id="customerForm">
+        <input type="text" id="customerName" placeholder="Customer Name" required>
+        <input type="email" id="customerEmail" placeholder="Email" required>
+        <input type="tel" id="customerPhone" placeholder="Phone Number" required>
+        <div class="form-actions">
+            <button type="button" onclick="addCustomer(event)">Add Customer</button>
+            <button type="button" onclick="closeForm()">Cancel</button>
+        </div>
+        </form>
+    </div>
+    </div>
+
+    
+  
+
+    <script src="firebaseconfiguration.js"></script>
+    <script src="addCustomers.js"></script>
+</body>
+</html>

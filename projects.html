@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CODESCRIPT Projects</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="projects.css">
+
+  <!-- FIREBASE CONNECTION -->
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- SCROLL ANIMATION -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <h2>CODESCRIPT</h2>
+    </div>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="customers.html">Customers</a></li>
+      <!-- <li><a href="#">Analytics</a></li> -->
+      <li><a href="finance.html">Financing</a></li>
+      <li><a href="settings.html">Settings</a></li>
+    </ul>
+  </div>
+
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Top Navbar -->
+    <div class="navbar">
+      <div class="search">
+        <input type="text" placeholder="Search...">
+      </div>
+      <div class="user-profile">
+        <span>Welcome, CODESCRIPT</span>
+      </div>
+    </div>
+
+
+
+    <div class="projects-information">
+        
+        <div class="topheading">
+            <h3>Projects Overview</h3>
+            <button onclick="openProjectForm()">+ Add Project</button>
+        </div>
+      
+        <!-- Add Project Form Popup -->
+        <div class="popup-form" id="projectFormPopup" onclick="closeProjectFormOutside(event)" style="display: none;">
+        <div class="form-container">
+            <h2>Add New Project</h2>
+            <form id="addProjectForm"> <!-- Match the JavaScript code -->
+            <input type="text" id="projectName" placeholder="Project Name" required>
+            <select id="projectStatus" required>
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <input type="date" id="projectDeadline" placeholder="Deadline" required>
+            <div class="form-actions">
+                <button type="submit">Add Project</button> <!-- Use type="submit" -->
+                <button type="button" onclick="closeProjectForm()">Cancel</button>
+            </div>
+            </form>
+        </div>
+        </div>
+
+
+      
+        <!-- Projects Stats -->
+        <div class="projects-stats">
+          <canvas id="projectStatsChart"></canvas>
+        </div>
+      </div>
+
+            
+        <!-- Projects List -->
+        <div class="projects-list">
+          <h3>All Projects</h3>
+          <!-- success messege -->
+           <div class="success-message" id="success-message"></div>
+          <table>
+            <thead>
+              <tr>
+                <th>Project Name</th>
+                <th>Status</th>
+                <th>Deadline</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="projectTableBody">
+              <!-- Dynamic Project Rows -->
+            </tbody>
+          </table>
+        </div>
+      
+
+    <script src="firebaseconfiguration.js"></script>
+    <script src="scroolAnimations.js"></script>
+    <script src="projects.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

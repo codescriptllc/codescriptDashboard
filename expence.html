@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CODESCRIPT Finance</title>
+  <link rel="stylesheet" href="expence.css">
+    <!-- FIREBASE CONNECTION -->
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <h2>CODESCRIPT</h2>
+    </div>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="customers.html">Customers</a></li>
+      <!-- <li><a href="#">Analytics</a></li> -->
+      <li><a href="finance.html">Financing</a></li>
+      <li><a href="settings.html">Settings</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Top Navbar -->
+    <div class="navbar">
+      <div class="search">
+        <input type="text" placeholder="Search...">
+      </div>
+      <div class="user-profile">
+        <span>Welcome, CODESCRIPT</span>
+      </div>
+    </div>
+
+
+    <div class="add-expence">
+        <h3>Add Expense</h3>
+        <div id="expenseSuccessMessage">
+            Expense added successfully!
+        </div>
+
+        <form id="expenceForm">
+            <label for="expenseAmount">Amount:</label>
+            <input id="expenseAmount" placeholder="Enter amount" required>
+            <label for="expenseDescription">Description:</label>
+            <input id="expenseDescription" placeholder="Enter description" required>
+            <button type="submit">Add Expense</button>
+        </form>
+    </div>
+
+    <div id="expenceList">
+        <h3>Existing Expense Entries</h3>
+        <ul></ul>
+    </div>
+
+    <div id ="navButton">
+        <a href="finance.html">REVENUE</a>
+    </div>    
+    </div>
+
+
+
+
+
+<script src="firebaseconfiguration.js"></script>
+<script src="expence.js"></script>
+</body>
+</html>

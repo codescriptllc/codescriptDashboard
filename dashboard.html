@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CODESCRIPT Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <!-- FIREBASE CONNECTION -->
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- SCROLL ANIMATION -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <h2>CODESCRIPT</h2>
+    </div>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="customers.html">Customers</a></li>
+      <!-- <li><a href="#">Analytics</a></li> -->
+      <li><a href="finance.html">Financing</a></li>
+      <li><a href="settings.html">Settings</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Top Navbar -->
+    <div class="navbar">
+      <div class="search">
+        <input type="text" placeholder="Search...">
+      </div>
+      <div class="user-profile">
+        <span>Welcome, CODESCRIPT</span>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-container">
+      <div class="stat-card" data-aos="fade-up" data-aos-duration="1000">
+        <h3>Revenue</h3>
+        <p>$0</p>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-duration="1500">
+        <h3>New Customers</h3>
+        <p id="newCustomersStat">0</p> <!-- This will be updated dynamically -->
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-duration="2000">
+        <h3>Tasks Completed</h3>
+        <p>0</p>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-duration="2500">
+        <h3>Expenses</h3>
+        <p>$0</p>
+      </div>
+    </div>
+
+      
+    <!-- Chart Section -->
+    <div class="chart-container" data-aos="fade-up" data-aos-duration="3000">
+      <canvas id="customerGrowthChart"></canvas>
+    </div>
+
+    <div class="chart-container" data-aos="fade-up" data-aos-duration="3000"">
+      <canvas id="expenseRevenueChart" style="height: 340px;"></canvas>
+    </div>
+  </div>
+
+
+  <script src="firebaseconfiguration.js"></script>
+  <script src="dashboard.js"></script>
+
+  <script src="scroolAnimations.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

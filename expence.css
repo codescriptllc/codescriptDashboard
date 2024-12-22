@@ -1,0 +1,206 @@
+:root {
+    /* MAIN COLORS */
+    --logoOrange: #ECA125;
+    --logoOrangeLighter: #eca0254c;
+    --logoOrangeHover: #eca02589;
+    --logoRed: #C74B19;
+    --logoGrey: #CCCCCE;
+    --white: #ffffff;
+    --black: #000000;
+    /* FONT-SIZES */
+    --mainHeading: 3.5em;
+    --secondaryHeading: 2.0em;
+    --paragraphSize: 1.5em;
+    --captionSize: 1em;
+    --phoneParagraph: 0.8em;
+    /* SECTION PADDING */
+    --normalPadding: 25px;
+    /* ANIMATING BUTTONS */
+    --buttonTransitionTime: .3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: white;
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #222;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo h2 {
+    color: var(--logoOrange);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-bottom: 20px;
+  }
+  
+  .nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  .nav-links a:hover {
+
+    background-color: var(--logoOrangeHover);
+    color: white;
+  }
+  
+  .main-content {
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .search input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background-color: #333;
+    color: white;
+    width: 300px;
+  }
+  
+  .user-profile {
+    color: #bbb;
+  }
+
+
+
+  .add-expence {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .add-expence h3 {
+    color: var(--logoOrange);
+    margin-bottom: 15px;
+    font-size: var(--secondaryHeading);
+  }
+  
+  .add-expence form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .add-expence label {
+    font-size: var(--paragraphSize);
+    color: var(--logoGrey);
+  }
+  
+  .add-expence input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: var(--white);
+    font-size: var(--paragraphSize);
+  }
+  
+  .add-expence input::placeholder {
+    color: #777;
+  }
+  
+  .add-expence button {
+    padding: 10px 15px;
+    font-size: var(--paragraphSize);
+    background-color: var(--logoOrange);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background var(--buttonTransitionTime);
+  }
+  
+  .add-expence button:hover {
+    background-color: var(--logoOrangeHover);
+  }
+  
+  #expenceList {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  #expenceList h3 {
+    color: var(--logoOrange);
+    margin-bottom: 15px;
+    font-size: var(--paragraphSize);
+  }
+
+  #expenseSuccessMessage{
+    display: none;
+    color: rgba(133, 253, 133, 0.839);
+    padding-bottom: 15px;
+  }
+  
+  #expenceList ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 200px;
+    overflow-y: scroll;
+  }
+  
+  #expenceList ul li {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    color: var(--logoGrey);
+    font-size: var(--paragraphSize);
+    border-left: 5px solid var(--logoOrange);
+  }
+  
+  #navButton{
+    background-color: #ECA125;
+    width: 15%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+
+  #navButton a{
+    text-decoration: none;
+    color: white;
+  }

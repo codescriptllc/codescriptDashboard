@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CODESCRIPT NOTES</title>
+  <!-- <link rel="stylesheet" href="dashboard.css"> -->
+  <link rel="stylesheet" href="notes.css">
+
+  <!-- FIREBASE CONNECTION -->
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <h2>CODESCRIPT</h2>
+    </div>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="customers.html">Customers</a></li>
+      <!-- <li><a href="#">Analytics</a></li> -->
+      <li><a href="finance.html">Financing</a></li>
+      <li><a href="settings.html">Settings</a></li>
+    </ul>
+  </div>
+
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Top Navbar -->
+    <div class="navbar">
+      <div class="search">
+        <input type="text" placeholder="Search...">
+      </div>
+      <div class="user-profile">
+        <span>Welcome, CODESCRIPT</span>
+      </div>
+    </div>
+
+    <div class="app">
+        <!-- Sidebar -->
+         <section class="horizontal">
+            <div class="sidebarNotes">
+                <button id="new-note-btn" onclick="OpenNote()">+ New Note</button>
+
+                <!-- ALERT -->
+                <p id="alertMessege"></p>
+
+                <ul id="note-list"></ul>
+
+            </div>
+
+            <!-- Graph View -->
+            <div class="graph">
+                <h2>Linked Notes</h2>
+                <div id="graph-container"></div>
+            </div>
+         </section>
+        
+    
+        <!-- Note Editor Section -->
+        <div class="editor" id="editor">
+        <div class="insideDiv">
+            <h2>ADD NOTE</h2>
+            <input type="text" id="note-title" placeholder="Note Title" />
+            <textarea id="note-editor" placeholder="Start typing your note here..."></textarea>
+            <button id="save-note-btn" onclick="saveNote()">Save Note</button>
+            <button onclick="closeNote()">Cancel</button>
+        </div>
+        </div>
+
+        <div id="note-popup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h2 id="popup-title">Note Title</h2>
+                <p id="popup-content">Note content will appear here...</p>
+
+                <div class="popup-content-buttons">
+                    <button onclick="editNote()" class="editNoteButton">Edit</button>
+                    <button onclick="deleteNote()" class="deleteNoteButton">Delete</button>
+                </div>
+            </div>
+        </div>
+        
+
+
+      </div>
+    
+    <script src="firebaseconfiguration.js"></script>
+    <script src="notes.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</body>
+</html>
